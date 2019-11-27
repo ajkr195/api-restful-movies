@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Netflux</title>
+  </head>
+
+  <body>
+    <!--Contenedor principal inicio-->
+    <div class="container">
+      <!-- Header start -->
+      <div class="row pt-3 pl-3 pr-3">
+          <div class="col-12 col-sm-6 d-flex justify-content-center justify-content-sm-end header">
+			<a class="title" href="index.html">
+				<img class="mt-4 mb-sm-4 img-fluid" src="img/logo.png">
+			</a>
+          </div>
+
+          <div class="col-12 col-sm-6 d-flex justify-content-center justify-content-sm-start align-items-center header">
+			<div class="h2 mt-0 mt-sm-4 mb-4 ">
+				<a class="title" href="index.html">Netflux</a>
+			</div>
+          </div>
+      </div>
+      <!-- Header end -->
+
+      <!-- Navbar start-->
+      <div class="row">
+          <div class="col-12" >
+            <nav class="navbar navbar-expand-lg navbar-light bg-light rounded-0">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+                    <div class="navbar-nav text-center mr-auto ml-auto">
+                        <a class="nav-item nav-link" href="index.html">Inicio</a>
+                        <a class="nav-item nav-link" href="#">Peliculas</a>
+                        <a class="nav-item nav-link" href="#">Televisión</a>
+                        <a class="nav-item nav-link" href="#">Documentales</a>
+                        <a class="nav-item nav-link" href="#">Recomendaciones</a>
+                        <a class="nav-item nav-link" href="#">Trailers</a>
+                    </div>
+                </div>
+              </nav>
+          </div>
+      </div>
+      <!-- Navbar end-->
+
+      <!-- Novedades start -->
+      <div class="row" >
+          <div class="col-12">
+            <div class="jumbotron rounded-0">
+                <h2>Novedades</h2>
+                <p class="">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laudantium nam voluptatem illum esse recusandae, voluptate obcaecati ea iure vitae nemo vero. Iure beatae consequatur placeat vitae laboriosam quidem vero! Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, nam dolorum, perferendis perspiciatis itaque fugiat sit deserunt, nisi laborum asperiores neque. Earum adipisci ratione perferendis aut qui quod excepturi iusto!
+                </p>
+            </div>
+          </div>
+      </div>
+      <!-- Novedades fin -->
+
+      <!--Contenido inicio-->
+      <div class="row d-flex ">
+        <!-- Principal inicio -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-8" >
+            <!-- fila peliculas 1 inicio -->
+            <div class="row p-2">
+                <div class="col-12">
+                    <p class="h4 ">Nuevas películas</p>
+                </div>
+            </div>
+            <div id="novedades-row-1" class="row d-flex justify-content-around d-flex align-items-start p-2">
+				<!-- Fila 1 peliculas data from ajax-->
+            </div>
+            <!-- fila peliculas 1 fin -->
+            <!-- fila peliculas 2 inicio -->
+            <div id="novedades-row-2" class="row d-flex justify-content-around align-items-start p-2 border-bottom">
+                <!-- Fila 2 peliculas data from ajax-->
+            </div>
+            <!-- fila peliculas 2 fin -->
+            <!-- fila peliculas 1 inicio -->
+            <div class="row p-2">
+                <div class="col-12">
+                    <p class="h4 ">Nuevas series</p>
+                </div>
+            </div>
+            <div id="series-row-1" class="row d-flex justify-content-around d-flex align-items-start p-2">
+                <!-- Fila 1 series data from ajax-->
+            </div>
+            <!-- fila peliculas 1 fin -->
+            <!-- fila peliculas 2 inicio -->
+            <div id="series-row-2" class="row d-flex justify-content-around align-items-start p-2">
+                <!-- Fila 2 series data from ajax-->
+            </div>
+            <!-- fila peliculas 2 fin -->
+        </div>
+        <!-- Principal fin -->
+        <!-- Sidebar inicio-->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+            <!-- Menu destacados inicio-->
+            <ul id="destacados" class="list-group border">
+                <!-- lista destacados data from ajax-->
+            </ul>
+            <!-- Menu destacados fin-->
+            <!-- Menu trailer inicio-->
+            <ul  id="movie-trailers" class="list-group border border-top-0">
+                <!-- lista trailers data from ajax-->
+            </ul>
+            <!-- Menu trailers fin-->
+        </div>
+        <!-- Sidebar fin-->
+      </div>
+      <!--Contenido fin-->
+
+
+
+
+      <!-- footer inicio -->
+      <div class="row p-3 pb-0 pb-sm-3" >
+        <div class="col-12 col-sm-12 col-md-4 footer">
+            <div class="p-3 d-flex flex-column text-center text-lg-left">
+                <p class="h5">Contactanos: </p>
+                <p class="mt-3">
+                    Lorem ipsum<br>
+                    1001, magni ut, <br>
+                    sit hic voluptatum, <br>
+                    ipsum voluptatem praesentium. <br>
+                    Ducimus magnam <br>
+                    iusto optio molestiae?
+                </p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 footer">
+            <div class="p-3 d-flex flex-column text-center text-lg-left">
+                <p class="h5">Lorem: </p>
+                <p class="mt-3">
+                    Lorem ipsum<br>
+                    1001, magni ut, <br>
+                    sit hic voluptatum, <br>
+                    ipsum voluptatem praesentium. <br>
+                    Ducimus magnam <br>
+                    iusto optio molestiae?
+                </p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 footer">
+            <div class="p-3 d-flex flex-column text-center text-lg-left mb-4 mb-md-0">
+                <p class="h5">Siguenos: </p>
+                <div class="mt-3 d-flex justify-content-center">
+                    <a class="p-2" href="#"><img src="img/facebook.png" alt="facebook"></a>
+                    <a class="p-2" href="#"><img src="img/instagram.png" alt="instagram"></a>
+                    <a class="p-2" href="#"><img src="img/twitter.png" alt="twitter"></a>
+                    <a class="p-2" href="#"><img src="img/youtube.png" alt="youtube"></a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- footer fin -->
+
+
+
+    </div>
+    <!--Contenedor principal fin-->
+ 
+    <!-- JavaScript inicio-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/netflux.js"></script>
+  </body>
+</html>

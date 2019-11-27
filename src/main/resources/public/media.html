@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Netflux</title>
+  </head>
+
+  <body>
+    <!--Contenedor principal inicio-->
+    <div class="container">
+      <!-- Header start -->
+      <div class="row pt-3 pl-3 pr-3">
+          <div class="col-12 col-sm-6 d-flex justify-content-center justify-content-sm-end header">
+			<a class="title" href="index.html">
+				<img class="mt-4 mb-sm-4 img-fluid" src="img/logo.png">
+			</a>
+          </div>
+
+          <div class="col-12 col-sm-6 d-flex justify-content-center justify-content-sm-start align-items-center header">
+			<div class="h2 mt-0 mt-sm-4 mb-4 ">
+				<a class="title" href="index.html">Netflux</a>
+			</div>
+          </div>
+      </div>
+      <!-- Header end -->
+
+        <!-- Navbar start-->
+        <div class="row">
+            <div class="col-12" >
+            <nav class="navbar navbar-expand-lg navbar-light bg-light rounded-0">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+                    <div class="navbar-nav text-center mr-auto ml-auto">
+                        <a class="nav-item nav-link" href="index.html">Inicio</a>
+                        <a class="nav-item nav-link" href="#">Peliculas</a>
+                        <a class="nav-item nav-link" href="#">Televisión</a>
+                        <a class="nav-item nav-link" href="#">Documentales</a>
+                        <a class="nav-item nav-link" href="#">Recomendaciones</a>
+                        <a class="nav-item nav-link" href="#">Trailers</a>
+                    </div>
+                </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar end-->
+
+        <!-- Sub header pelicula inicio -->
+        <div class="row" >
+            <div class="col-12">
+                <div id="movie-title-1" class="jumbotron text-center rounded-0">
+                    <!-- movie-title-1 data from ajax -->
+                </div>
+            </div>
+        </div>
+        <!-- Sub header pelicula inicio fin -->
+
+
+
+      <!--Contenido inicio-->
+      <div class="row d-flex">
+            <!-- Principal inicio -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8" >
+                <!-- Detalle pelicula inicio -->
+                <div class="row p-2">
+                    <!-- Movie cover inicio -->
+                    <div class="col-12 col-sm-5 col-md-5 col-lg-4 d-flex flex-row align-items-center">
+                        <div class="row">
+                            <div class="col-2 col-sm-0"></div>
+                            <div id="movie-img-1" class="col-8 col-sm-12">
+                                <!-- movie-img-1 data from ajax -->
+                            </div>
+                            <div class="col-2 col-sm-0"></div>
+                        </div>
+                    </div>
+                    <!-- Movie cover fin -->
+                    <!-- Movie data inicio -->
+                    <div class="col-12 col-sm-7 col-md-7 col-lg-8" style="background-color:fff;">
+                        <div class="row">
+                            <div id="movie-title-2" class="col-12 text-center text-sm-left" >
+                                <!-- movie-title-2 data from ajax -->
+                            </div>
+                        </div>
+                        <div class="row pt-4">
+                            <div class="col-12">
+                                <P id="movie-description" class="text-justify"></P>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Movie data fin -->
+                </div>
+                <!-- Detalle pelicula fin -->
+                <!-- direccion inicio -->
+                <div class="row p-2">
+                    <div class="col-12">
+                        <div id="movie-director" class="h5 text-center text-sm-left"></div>
+                    </div>
+                </div>
+                <!-- direccion Fin -->
+                <!-- Reparto inicio -->
+                <div class="row pt-2 pl-2 pr-2">
+                    <div class="col-12">
+                        <div class="h5 text-center text-sm-left">Reparto:</div>
+                    </div>
+                </div>
+                <div id="movie-cast" class="row pb-2 pl-2 pr-2 d-flex flex-wrap">
+                     <!-- movie-cast data from ajax -->
+                </div>
+                <!-- Reparto Fin -->
+            </div>
+            <!-- Principal fin -->
+            <!-- Sidebar inicio-->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+                <!-- Menu destacados inicio-->
+                <ul id="destacados" class="list-group border">
+                     <!-- destacados data from ajax -->
+                </ul>
+                <!-- Menu destacados fin-->
+                <!-- Menu trailer inicio-->
+                <ul id="movie-trailers" class="list-group border border-top-0">
+                    <!-- lista trailers data from ajax-->
+                </ul>
+                <!-- Menu trailers fin-->
+            </div>
+            <!-- Sidebar fin-->
+          </div>
+          <!--Contenido fin-->
+    
+    
+    
+    
+          <!-- footer inicio -->
+          <div class="row p-3 pb-0 pb-sm-3" >
+            <div class="col-12 col-sm-12 col-md-4 footer">
+                <div class="p-3 d-flex flex-column text-center text-lg-left">
+                    <p class="h5">Contactanos: </p>
+                    <p class="mt-3">
+                        Lorem ipsum<br>
+                        1001, magni ut, <br>
+                        sit hic voluptatum, <br>
+                        ipsum voluptatem praesentium. <br>
+                        Ducimus magnam <br>
+                        iusto optio molestiae?
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 footer">
+                <div class="p-3 d-flex flex-column text-center text-lg-left">
+                    <p class="h5">Lorem: </p>
+                    <p class="mt-3">
+                        Lorem ipsum<br>
+                        1001, magni ut, <br>
+                        sit hic voluptatum, <br>
+                        ipsum voluptatem praesentium. <br>
+                        Ducimus magnam <br>
+                        iusto optio molestiae?
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 footer">
+                <div class="p-3 d-flex flex-column text-center text-lg-left mb-4 mb-md-0">
+                    <p class="h5">Siguenos: </p>
+                    <div class="mt-3 d-flex justify-content-center">
+                        <a class="p-2" href="#"><img src="img/facebook.png" alt="facebook"></a>
+                        <a class="p-2" href="#"><img src="img/instagram.png" alt="instagram"></a>
+                        <a class="p-2" href="#"><img src="img/twitter.png" alt="twitter"></a>
+                        <a class="p-2" href="#"><img src="img/youtube.png" alt="youtube"></a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <!-- footer fin -->
+    
+    
+
+
+    </div>
+    <!--Contenedor principal fin-->
+ 
+    <!-- JavaScript inicio-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/netflux.js"></script>
+  </body>
+</html>
