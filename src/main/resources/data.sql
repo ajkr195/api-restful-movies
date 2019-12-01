@@ -180,3 +180,9 @@ INSERT INTO serie_actor (id_serie, id_actor) VALUES (8,4);
 INSERT INTO serie_actor (id_serie, id_actor) VALUES (8,5);
 INSERT INTO serie_actor (id_serie, id_actor) VALUES (8,6);
 INSERT INTO serie_actor (id_serie, id_actor) VALUES (8,7);
+
+
+INSERT INTO trailer (id, name, img_url, url) VALUES (1,'Star Wars: The Rise of Skywalker','img/trailers/star-wars-trailer.jpg','https://www.youtube.com/watch?v=8Qn_spdM5Zg&t=4s');
+INSERT INTO trailer (id, name, img_url, url) VALUES (2,'Emma','img/trailers/enma-trailer.jpg','https://www.youtube.com/watch?v=2zZLY4bkw_E');
+INSERT INTO trailer (id, name, img_url, url) VALUES (3,'Unidos','img/trailers/unidos-trailer.jpg','https://www.youtube.com/watch?v=X1sFu1d4O88');
+INSERT INTO trailer (id, name, img_url, url) VALUES (4,'Sonic','img/trailers/sonic-trailer.jpg','https://www.youtube.com/watch?v=mIgGCaIwdXU');

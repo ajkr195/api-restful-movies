@@ -187,8 +187,8 @@ function set_media_from_ajax(){
 
 function set_sidebar_from_ajax(){
 	//API Rest URLs
-    const urlBase = "https://dsai-netflux.herokuapp.com/api/";
-    
+    const urlBase = "http://localhost:8080/";
+    /*
     //cargando destacados
     $.ajax({
         type: "GET",
@@ -222,13 +222,12 @@ function set_sidebar_from_ajax(){
         }
     });
 
-
+     */
     //cargando trailers
     $.ajax({
         type: "GET",
-        url: urlBase+"trailers",
+        url: urlBase+"api/trailers",
         success: function(data){
-            //json example: [{"title":"string","url":"string","imgURL":"string"}]
             var html_content = '<li class="list-group-item border-0"><h4>Trailers</h4></li></li>';
             jQuery.each(data, function(i, value) {
                 html_content = html_content + 
@@ -237,14 +236,14 @@ function set_sidebar_from_ajax(){
                                         '<div class="row pl-4 pr-4 pl-lg-3 pr-lg-3">'+
                                         '<div class="col-12 col-sm-12 col-md-12 col-lg-3 p-0 d-flex align-items-center justify-content-center">'+
                                                 '<picture>'+
-                                                    '<source media="(max-width: 768px)" srcset="https://dsai-netflux.herokuapp.com/'+value.imgURL+'">'+
-                                                    '<source media="(min-width: 767px)" srcset="https://dsai-netflux.herokuapp.com/'+value.imgURL+'">'+
-                                                    '<img class="img-fluid img-thumbnail" src="https://dsai-netflux.herokuapp.com/'+value.imgURL+'" alt="movie">'+
+                                                    '<source media="(max-width: 768px)"'+urlBase+value.img_url+'">'+
+                                                    '<source media="(min-width: 767px)" srcset="'+urlBase+value.img_url+'">'+
+                                                    '<img class="img-fluid img-thumbnail" src="'+urlBase+value.img_url+'" alt="movie">'+
                                                 '</picture>'+
                                             '</div>'+
                                             '<div class="col-12 col-sm-12 col-md-12 col-lg-9 p-2 d-flex align-items-center">'+
                                                 '<div class="w-100 text-center text-lg-left" >'+
-                                                    '<div class="ml-2" >'+value.title+'<div>'+
+                                                    '<div class="ml-2" >'+value.name+'<div>'+
                                                 '</div> '+
                                             '</div>'+
                                         '</div>'+
