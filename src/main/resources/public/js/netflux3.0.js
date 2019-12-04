@@ -30,12 +30,14 @@ function set_index_from_ajax(){
                 html_content = html_content + 
                 '<div class="col-12 col-sm-6 col-md-6 col-lg-3 d-flex flex-column justify-content-center">' +
                     '<a href="media.html?id='+value.id+'&mediatype='+value.media_type+'">'+
-                    '<picture>'+
-                        '<source media="(max-width: 576px)" srcset="'+urlBase+value.img_url+'">'+
-                        '<source media="(min-width: 577px)" srcset="'+urlBase+value.img_url+'">'+
-                        '<img class="img-fluid img-thumbnail" src="'+urlBase+value.img_url+'" alt="movie">'+
-                    '</picture>'+
-                    '<p>'+value.title+'</p>'+
+                    	'<div class="d-flex justify-content-center w-100">' + 
+		                    '<picture>'+
+		                        '<source media="(max-width: 576px)" srcset="'+urlBase+value.img_url+'">'+
+		                        '<source media="(min-width: 577px)" srcset="'+urlBase+value.img_url+'">'+
+		                        '<img class="img-fluid img-thumbnail" src="'+urlBase+value.img_url+'" alt="movie">'+
+		                    '</picture>'+
+		                '</div>' + 
+	                    '<p class="text-center text-lg-left">'+value.title+'</p>'+
                     '</a>'+
                 '</div>';
 
@@ -66,12 +68,14 @@ function set_index_from_ajax(){
                 html_content = html_content + 
                 '<div class="col-12 col-sm-6 col-md-6 col-lg-3 d-flex flex-column justify-content-center">' +
                 	'<a href="media.html?id='+value.id+'&mediatype='+value.media_type+'">'+
-                    '<picture>'+
-                        '<source media="(max-width: 576px)" srcset="'+urlBase+value.img_url+'">'+
-                        '<source media="(min-width: 577px)" srcset="'+urlBase+value.img_url+'">'+
-                        '<img class="img-fluid img-thumbnail" src="'+urlBase+value.img_url+'" alt="movie">'+
-                    '</picture>'+
-                    '<p>'+value.title+'</p>'+
+                	'<div class="d-flex justify-content-center w-100">' + 
+	                    '<picture>'+
+	                        '<source media="(max-width: 576px)" srcset="'+urlBase+value.img_url+'">'+
+	                        '<source media="(min-width: 577px)" srcset="'+urlBase+value.img_url+'">'+
+	                        '<img class="img-fluid img-thumbnail" src="'+urlBase+value.img_url+'" alt="movie">'+
+	                    '</picture>'+
+                    '</div>' + 
+                    '<p class="text-center text-lg-left">'+value.title+'</p>'+
                     '</a>'+
                 '</div>';
 

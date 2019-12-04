@@ -9,17 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.netflux.model.Trailer;
 import com.netflux.model.TrailerRepository;
-import com.netflux.model.TrailerQuery;
 
 @CrossOrigin(origins = "*")
 @RestController
-public class TrailerController implements TrailerQuery{
+public class TrailerController{
 	@Autowired
 	private TrailerRepository trailerRepository;
 	
 	@RequestMapping(method = RequestMethod.GET, value="/api/trailers")
 	@ResponseBody
-	@Override
 	public Iterable<Trailer> getTopThree() {
 		//return movieRepository.findAll();
 		Iterable<Trailer> movie_list = trailerRepository.getTopThree();
