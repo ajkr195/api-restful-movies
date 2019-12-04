@@ -1,5 +1,8 @@
 package com.netflux.controller;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,7 +11,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.netflux.model.*;
+import com.netflux.model.MovieRepository;
+import com.netflux.model.MovieDTO;
+import com.netflux.model.Movie;
+import com.netflux.model.OutstandingDTO;;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -16,19 +22,15 @@ public class MovieController {
 	@Autowired
 	private MovieRepository movieRepository;
 	
-	@RequestMapping(method = RequestMethod.GET, value="/movies")
+	@RequestMapping(method = RequestMethod.GET, value="api/movies/news")
 	@ResponseBody
-	public Iterable<Movie> getAllMovies() {
-		//return movieRepository.findAll();
+	public Iterable<MovieDTO> getAllMovies() {
 		Iterable<Movie> movie_list = movieRepository.findAll();
-		/*for(Movie m : movie_list){
-		    System.out.println(m.toString());
-		    List<Actor> casting = m.getCasting();
-		    for (Actor a : casting) {
-		    	System.out.println(a.toString());
-		    }
-		}*/
-		return movie_list;
+		ArrayList<MovieDTO> movieDTO_list = new ArrayList<MovieDTO>();
+		for(Movie m : movie_list){
+			movieDTO_list.add(new MovieDTO(m.getId(), m.getTitle(), m.getImg_url(), m.getMedia_type()));
+		}
+		return movieDTO_list;
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value="api/movies/{id}")
@@ -37,9 +39,16 @@ public class MovieController {
 		return movieRepository.findById(id);
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value="api/news")
+	@RequestMapping(method = RequestMethod.GET, value="api/outstanding")
 	@ResponseBody
-	public Movie getNewMovies(@PathVariable("id") int id) {
-		return movieRepository.findById(id);
+	public Iterable<OutstandingDTO> getOutstanding() {
+		Iterable<Object> object_list = movieRepository.getOutstanding();
+		ArrayList<OutstandingDTO> outstanding_list = new ArrayList<OutstandingDTO>();
+		for(Object o : object_list){
+			Object[] obj = (Object[])o;
+			outstanding_list.add(new OutstandingDTO(((BigInteger) obj[0]).longValue(),(String)obj[1],(String)obj[2],(int)obj[3]));
+		}
+		return outstanding_list;
+		
 	}
 }

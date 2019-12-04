@@ -15,14 +15,13 @@ $( document ).ready(function() {
 
 function set_index_from_ajax(){
 	//API Rest URLs
-    const urlBase = "https://dsai-netflux.herokuapp.com/api/";
+    const urlBase = "http://localhost:8080/";
 
     //cargando datos de peliculas
     $.ajax({
         type: "GET",
-        url: urlBase+"peliculas/novedades",
+        url: urlBase+"api/movies/news",
         success: function(data){
-            //data = [{"id":"string","url":"string","title":"string","imgURL":"string"}]
             var step = 0;
             var id_container = 1;
             var html_content = "";
@@ -30,11 +29,11 @@ function set_index_from_ajax(){
             jQuery.each(data, function(i, value) {
                 html_content = html_content + 
                 '<div class="col-12 col-sm-6 col-md-6 col-lg-3 d-flex flex-column justify-content-center">' +
-                    '<a href="media.html?url='+value.url+'">'+
+                    '<a href="media.html?id='+value.id+'&mediatype='+value.media_type+'">'+
                     '<picture>'+
-                        '<source media="(max-width: 576px)" srcset="https://dsai-netflux.herokuapp.com/'+value.imgURL+'">'+
-                        '<source media="(min-width: 577px)" srcset="https://dsai-netflux.herokuapp.com/'+value.imgURL+'">'+
-                        '<img class="img-fluid img-thumbnail" src="https://dsai-netflux.herokuapp.com/'+value.imgURL+'" alt="movie">'+
+                        '<source media="(max-width: 576px)" srcset="'+urlBase+value.img_url+'">'+
+                        '<source media="(min-width: 577px)" srcset="'+urlBase+value.img_url+'">'+
+                        '<img class="img-fluid img-thumbnail" src="'+urlBase+value.img_url+'" alt="movie">'+
                     '</picture>'+
                     '<p>'+value.title+'</p>'+
                     '</a>'+
@@ -57,9 +56,8 @@ function set_index_from_ajax(){
     //cargando datos de series
     $.ajax({
         type: "GET",
-        url: urlBase+"series/novedades",
+        url: urlBase+"api/series/news",
         success: function(data){
-            //data = [{"id":"string","url":"string","title":"string","imgURL":"string"}]
             var step = 0;
             var id_container = 1;
             var html_content = "";
@@ -67,11 +65,11 @@ function set_index_from_ajax(){
             jQuery.each(data, function(i, value) {
                 html_content = html_content + 
                 '<div class="col-12 col-sm-6 col-md-6 col-lg-3 d-flex flex-column justify-content-center">' +
-                    '<a href="media.html?url='+value.url+'">'+
+                	'<a href="media.html?id='+value.id+'&mediatype='+value.media_type+'">'+
                     '<picture>'+
-                        '<source media="(max-width: 576px)" srcset="https://dsai-netflux.herokuapp.com/'+value.imgURL+'">'+
-                        '<source media="(min-width: 577px)" srcset="https://dsai-netflux.herokuapp.com/'+value.imgURL+'">'+
-                        '<img class="img-fluid img-thumbnail" src="https://dsai-netflux.herokuapp.com/'+value.imgURL+'" alt="movie">'+
+                        '<source media="(max-width: 576px)" srcset="'+urlBase+value.img_url+'">'+
+                        '<source media="(min-width: 577px)" srcset="'+urlBase+value.img_url+'">'+
+                        '<img class="img-fluid img-thumbnail" src="'+urlBase+value.img_url+'" alt="movie">'+
                     '</picture>'+
                     '<p>'+value.title+'</p>'+
                     '</a>'+
@@ -107,8 +105,11 @@ function set_media_from_ajax(){
     if(mediaType == 1){ //peliculas
     	urlComplement = 'api/movies/';
     }
-    else{ //series
+    else if(mediaType == 2){ //series
     	urlComplement = 'api/series/';
+    }
+    else{
+    	window.location.replace('index.html');
     }
     const url = urlBase + urlComplement+ id;
     
@@ -122,7 +123,6 @@ function set_media_from_ajax(){
         },
         success: function(data){
             var mediaData = new Array();
-            console.log(mediaType,data);
             if(mediaType == 1){ //peliculas
             	mediaData['title_year'] = data.year;
             	mediaData['title_2_duration'] = 'Duración: '+data.duration;
@@ -188,24 +188,23 @@ function set_media_from_ajax(){
 function set_sidebar_from_ajax(){
 	//API Rest URLs
     const urlBase = "http://localhost:8080/";
-    /*
+    
     //cargando destacados
     $.ajax({
         type: "GET",
-        url: urlBase+"destacados",
+        url: urlBase+"api/outstanding",
         success: function(data){
-            //json example: [{"id":"string","type":"string","url":"string","title":"string","imgURL":"string"}]
             var html_content = '<li class="list-group-item border-0"><h4>Destacados</h4></li>';
             jQuery.each(data, function(i, value) {
                 html_content = html_content + 
-                            '<a href="media.html?url='+value.url+'">' + 
+                			'<a href="media.html?id='+value.id+'&mediatype='+value.media_type+'">'+
                                 '<li class="list-group-item border-0 pt-0 pb-3">' +
                                     '<div class="row pl-4 pr-4 pl-lg-3 pr-lg-3">' +
                                         '<div class="col-12 col-sm-12 col-md-12 col-lg-3 p-0 d-flex align-items-center justify-content-center">' +
                                                 '<picture>' +
-                                                    '<source media="(max-width: 768px)" srcset="https://dsai-netflux.herokuapp.com/'+value.imgURL+'">' +
-                                                    '<source media="(min-width: 767px)" srcset="https://dsai-netflux.herokuapp.com/'+value.imgURL+'">' +
-                                                    '<img class="img-fluid img-thumbnail" src="https://dsai-netflux.herokuapp.com/'+value.imgURL+'" alt="movie">' +
+                                                    '<source media="(max-width: 768px)" srcset="'+urlBase+value.img_url_preview+'">' +
+                                                    '<source media="(min-width: 767px)" srcset="'+urlBase+value.img_url_preview+'">' +
+                                                    '<img class="img-fluid img-thumbnail" src="'+urlBase+value.img_url_preview+'" alt="movie">' +
                                                 '</picture>' +
                                         '</div>' +
                                         '<div class="col-12 col-sm-12 col-md-12 col-lg-9 p-2 d-flex align-items-center">' +
@@ -222,7 +221,7 @@ function set_sidebar_from_ajax(){
         }
     });
 
-     */
+     
     //cargando trailers
     $.ajax({
         type: "GET",
@@ -236,7 +235,7 @@ function set_sidebar_from_ajax(){
                                         '<div class="row pl-4 pr-4 pl-lg-3 pr-lg-3">'+
                                         '<div class="col-12 col-sm-12 col-md-12 col-lg-3 p-0 d-flex align-items-center justify-content-center">'+
                                                 '<picture>'+
-                                                    '<source media="(max-width: 768px)"'+urlBase+value.img_url+'">'+
+                                                    '<source media="(max-width: 768px)" srcset="'+urlBase+value.img_url+'">'+
                                                     '<source media="(min-width: 767px)" srcset="'+urlBase+value.img_url+'">'+
                                                     '<img class="img-fluid img-thumbnail" src="'+urlBase+value.img_url+'" alt="movie">'+
                                                 '</picture>'+

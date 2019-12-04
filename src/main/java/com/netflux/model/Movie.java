@@ -10,6 +10,8 @@ import org.hibernate.annotations.ColumnDefault;
 @Entity
 public class Movie {
 	
+
+
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
@@ -24,6 +26,8 @@ public class Movie {
     private String year;
     @ColumnDefault(value = "1")
     private int media_type;
+    @ColumnDefault(value = "0")
+    private int outstanding;
     
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "movie_actor",
@@ -35,6 +39,14 @@ public class Movie {
     public Movie() {  
     	super();
     }
+    
+	public Movie(Long id, String title, String img_url_preview, int media_type) {
+		this.id = id;
+		this.title = title;
+		this.img_url_preview = img_url_preview;
+		this.media_type = media_type;
+	}
+    
     
 	public Movie(Long id, String title, String img_url, String duration, String description, String director) {
 		super();
@@ -126,6 +138,15 @@ public class Movie {
 	public void setYear(String year) {
 		this.year = year;
 	}	
+	
+	public int getOutstanding() {
+		return outstanding;
+	}
+
+	public void setOutstanding(int outstanding) {
+		this.outstanding = outstanding;
+	}
+	
 	public List<Actor> getCasting() {
 		return casting;
 	}
@@ -138,6 +159,8 @@ public class Movie {
 		return "Movie [id=" + id + ", title=" + title + ", img_url=" + img_url + ", duration=" + duration
 				+ ", description=" + description + ", director=" + director + "]";
 	}
+
+
 
 
 

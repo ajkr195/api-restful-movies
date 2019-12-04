@@ -31,6 +31,8 @@ public class Serie {
     private String url;
     @ColumnDefault(value = "1")
     private int media_type;
+    @ColumnDefault(value = "0")
+    private int outstanding;
     
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "serie_actor",
@@ -128,6 +130,14 @@ public class Serie {
 		this.img_url_preview = img_url_preview;
 	}
 
+	public int getOutstanding() {
+		return outstanding;
+	}
+
+	public void setOutstanding(int outstanding) {
+		this.outstanding = outstanding;
+	}
+	
 	public List<Actor> getCasting() {
 		return casting;
 	}
@@ -150,10 +160,6 @@ public class Serie {
 				+ ", year_end=" + year_end + ", seasons=" + seasons + ", description=" + description + ", url=" + url
 				+ ", media_type=" + media_type + ", casting=" + casting + "]";
 	}
-
-
-
-
     
     
 }
