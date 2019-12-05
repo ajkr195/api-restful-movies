@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.netflux.model.MovieRepository;
 import com.netflux.model.MovieDTO;
 import com.netflux.model.Movie;
-import com.netflux.model.OutstandingDTO;;
+import com.netflux.model.OutstandingDTO;
+
+import com.netflux.exception.NotFoundException;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -36,7 +38,12 @@ public class MovieController {
 	@RequestMapping(method = RequestMethod.GET, value="api/movies/{id}")
 	@ResponseBody
 	public Movie getMovie(@PathVariable("id") int id) {
-		return movieRepository.findById(id);
+		Movie movie = null;
+		movie = movieRepository.findById(id);
+		if(movie == null) {
+			throw new NotFoundException(); 
+		}
+		return movie;
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value="api/outstanding")

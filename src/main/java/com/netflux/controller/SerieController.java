@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.netflux.exception.NotFoundException;
 import com.netflux.model.Serie;
 import com.netflux.model.SerieDTO;
 import com.netflux.model.SerieRepository;
@@ -34,6 +35,11 @@ public class SerieController {
 	@RequestMapping(method = RequestMethod.GET, value="api/series/{id}")
 	@ResponseBody
 	public Serie getSerie(@PathVariable("id") int id) {
-		return serieRepository.findById(id);
+		Serie serie = null;
+		serie = serieRepository.findById(id);
+		if(serie == null) {
+			throw new NotFoundException(); 
+		}
+		return serie;
 	}
 }

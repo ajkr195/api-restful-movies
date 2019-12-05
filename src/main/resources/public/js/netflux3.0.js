@@ -15,7 +15,7 @@ $( document ).ready(function() {
 
 function set_index_from_ajax(){
 	//API Rest URLs
-    const urlBase = "http://localhost:8080/";
+    const urlBase = "./";
 
     //cargando datos de peliculas
     $.ajax({
@@ -96,7 +96,7 @@ function set_index_from_ajax(){
 
 function set_media_from_ajax(){
     //API Rest URLs
-    var urlBase = "http://localhost:8080/";
+    var urlBase = "./";
 
     //obteniendo id
     var params = new window.URLSearchParams(window.location.search);
@@ -122,8 +122,9 @@ function set_media_from_ajax(){
         type: "GET",
         url: url,
         error: function (request, error) {
-        	console.log("ERROR");
-        	console.log(arguments);
+        	if(arguments[0].status == 404){
+        		window.location.replace('index.html');
+        	}
         },
         success: function(data){
             var mediaData = new Array();
@@ -191,7 +192,7 @@ function set_media_from_ajax(){
 
 function set_sidebar_from_ajax(){
 	//API Rest URLs
-    const urlBase = "http://localhost:8080/";
+    const urlBase = "./";
     
     //cargando destacados
     $.ajax({
