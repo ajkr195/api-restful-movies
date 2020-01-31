@@ -10,10 +10,17 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Productor {
+
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private String name;
+    
+    public Productor(Long id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
     
 	public Productor() {
 		super();

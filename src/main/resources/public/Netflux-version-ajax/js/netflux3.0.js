@@ -40,18 +40,8 @@ function set_index_from_ajax(){
 	                    '<p class="text-center text-lg-left">'+value.title+'</p>'+
                     '</a>'+
                 '</div>';
-
-                if(step==3){
-                    $("#novedades-row-"+id_container).html(html_content);
-                    html_content = "";
-                    step = 0;
-                    id_container++;
-                }
-                else{
-                    step ++;
-                }
             });
-            
+            $("#novedades-row-1").html(html_content);
         }
     });
 
@@ -78,16 +68,7 @@ function set_index_from_ajax(){
                     '<p class="text-center text-lg-left">'+value.title+'</p>'+
                     '</a>'+
                 '</div>';
-
-                if(step==3){
-                    $("#series-row-"+id_container).html(html_content);
-                    html_content = "";
-                    step = 0;
-                    id_container++;
-                }
-                else{
-                    step ++;
-                }
+                $("#series-row-1").html(html_content);
             });
             
         }

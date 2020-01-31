@@ -10,15 +10,23 @@ import javax.persistence.Id;
 
 @Entity
 public class Actor {
-	public Actor() {
-		super();
-	}
-
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String img_url;
+    
+	public Actor(Long id, String name, String img_url) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.img_url = img_url;
+	}
+	
+	public Actor() {
+		super();
+	}
+
     
     @ManyToMany(mappedBy = "casting")
     private List<Movie> movies;

@@ -39,6 +39,15 @@ public class Movie {
     public Movie() {  
     	super();
     }
+
+    //constructor de prueba POST
+    public Movie (String title, String duration, String year, String description, String director) {
+    	this.title = title;
+    	this.duration = duration;
+    	this.year = year;
+    	this.description = description;
+    	this.director = director;
+    }
     
 	public Movie(Long id, String title, String img_url_preview, int media_type) {
 		this.id = id;
@@ -156,12 +165,10 @@ public class Movie {
 
 	@Override
 	public String toString() {
-		return "Movie [id=" + id + ", title=" + title + ", img_url=" + img_url + ", duration=" + duration
-				+ ", description=" + description + ", director=" + director + "]";
+		return "Movie [id=" + id + ", title=" + title + ", img_url=" + img_url + ", img_url_preview=" + img_url_preview
+				+ ", duration=" + duration + ", description=" + description + ", director=" + director + ", url=" + url
+				+ ", year=" + year + ", media_type=" + media_type + ", outstanding=" + outstanding + ", casting="
+				+ casting + "]";
 	}
-
-
-
-
 
 }

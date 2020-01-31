@@ -153,13 +153,16 @@ public class Serie {
 	public void setCreators(List<Productor> creators) {
 		this.creators = creators;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Serie [id=" + id + ", title=" + title + ", img_url=" + img_url + ", year_start=" + year_start
-				+ ", year_end=" + year_end + ", seasons=" + seasons + ", description=" + description + ", url=" + url
-				+ ", media_type=" + media_type + ", casting=" + casting + "]";
+		return "Serie [id=" + id + ", title=" + title + ", img_url=" + img_url + ", img_url_preview=" + img_url_preview
+				+ ", year_start=" + year_start + ", year_end=" + year_end + ", seasons=" + seasons + ", description="
+				+ description + ", url=" + url + ", media_type=" + media_type + ", outstanding=" + outstanding
+				+ ", casting=" + casting + ", creators=" + creators + "]";
 	}
+	
+
     
     
 }
